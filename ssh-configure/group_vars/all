@@ -1,5 +1,0 @@
----
-# Add new user
-ssh_user : 
-ssh_user_passwd: 
-ssh_port:

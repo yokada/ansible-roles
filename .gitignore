@@ -1,0 +1,5 @@
+hosts
+/init.yml
+/site.yml
+/*.retry
+/group_vars/*

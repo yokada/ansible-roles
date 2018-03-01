@@ -1,10 +1,12 @@
 ---
 - name: Download WordPress
-  get_url: url=http://wordpress.org/wordpress-{{ wp_version }}.tar.gz dest=/srv/wordpress-{{ wp_version }}.tar.gz
-           sha256sum="{{ wp_sha256sum }}"
+  get_url:
+    url: https://ja.wordpress.org/wordpress-{{ wp_version }}-ja.tar.gz
+    dest: /srv/wordpress-{{ wp_version }}-ja.tar.gz
+    checksum: md5:"{{ a45522d604b4d7004ec1d4ae05b5abcc }}"
 
 - name: Extract archive
-  command: chdir=/srv/ /bin/tar xvf wordpress-{{ wp_version }}.tar.gz creates=/srv/wordpress
+  command: chdir=/srv/ /bin/tar xvf wordpress-{{ wp_version }}-ja.tar.gz creates=/srv/wordpress
 
 - name: Add group "wordpress"
   group: name=wordpress

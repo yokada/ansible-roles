@@ -1,6 +1,0 @@
----
-- hosts: wordpress-server
-  sudo: true
-  roles:
-    - ssh
-    - selinux

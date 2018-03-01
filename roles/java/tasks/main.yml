@@ -1,0 +1,13 @@
+---
+- name: Install Java 1.8
+  yum: name="{{ item }}" state=present
+  with_items:
+    - java-1.8.0-openjdk
+    - java-1.8.0-openjdk-devel
+
+- name: Set JAVA environmet vars if configured.
+  template:
+    src: java_env.sh.j2
+    dest: /etc/profile.d/java_home.sh
+    mode: 0644
+  when: java_home is defined and java_home != ''
