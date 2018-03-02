@@ -1,0 +1,80 @@
+---
+# Add new user
+ssh_user :
+ssh_user_passwd:
+ssh_port:
+
+
+
+# JAVA
+java_home: /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.el7_4.x86_64
+
+
+
+# TOMCAT
+## system preparation
+tomcat_os_group_name:  tomcat
+tomcat_os_user_name:   tomcat
+tomcat_service_name:   tomcat
+tomcat_home_path:   /home
+
+## Tomcat binary to dl and related path
+tomcat_binary: apache-tomcat-8.5.28.tar.gz
+tomcat_binary_url:  "http://mirror.nus.edu.sg/apache/tomcat/tomcat-8/v8.5.28/bin/{{ tomcat_binary }}"
+tomcat_dest: /opt/
+tomcat_target_dir:  apache-tomcat-8.5.28
+tomcat_symlink:  tomcat-latest
+
+## Tomcat configuration files related
+tomcat_conf_dir:  "{{ tomcat_dest }}{{ tomcat_symlink }}/conf/"
+tomcat_service_port: 8080
+
+## Tomcat server.xml
+## nothing for now
+
+## Tomcat users.xml
+tomcat_jenkins_username:  jenkins
+tomcat_admin_username:
+tomcat_admin_password:
+
+
+
+# Variables listed here are applicable to all host groups
+wp_version: 4.9.4
+wp_sha256sum: #3b0db3abe8504f15a33cf64188a493ec0de01eaa8d20e37c3d6a1d9fa0a40fb4
+
+
+
+# MySQL settings
+mysqlservice: mysqld
+mysql_port: 3306
+
+
+
+# These are the WordPress database settings
+wp_db_name:
+wp_db_user:
+wp_db_pass:
+
+
+
+# This is used for the nginx server configuration, but access to the
+# WordPress site is not restricted by a named host.
+nginx_port: 80
+server_hostname:
+
+
+
+# Disable All Updates
+# By default automatic updates are enabled, set this value to true to disable all automatic updates
+auto_up_disable: false
+
+
+
+#Define Core Update Level
+# true  = Development, minor, and major updates are all enabled
+# false = Development, minor, and major updates are all disabled
+# minor = Minor updates are enabled, development, and major updates are disabled
+core_update_level: true
+
+

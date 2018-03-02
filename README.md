@@ -12,6 +12,17 @@
 xxx.xxx.xxx.xxx ansible_ssh_private_key_file=~/.ssh/id_rsa ansible_ssh_user=root
 ```
 
+## Configure group_vars/main.yml
+
+```
+$ mv group_vars/all.example group_vars/all
+```
+
+```
+$ vi group_vars/all
+```
+
+
 ## Create playbooks what you need
 
 ### init.yml
